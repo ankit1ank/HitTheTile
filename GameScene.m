@@ -11,13 +11,13 @@
 #include <stdlib.h>
 
 @implementation GameScene {
-    CCSprite* _square;
-    CCSprite* _circle;
-    CCSprite* _triangle;
+    __weak CCSprite* _square;
+    __weak CCSprite* _circle;
+    __weak CCSprite* _triangle;
     int _objectExists;
     double _timeInterval;
-    NSUInteger score;
-    CCLabelTTF* _scoreLabel;
+    int score,hei,wid;
+    __weak CCLabelTTF* _scoreLabel;
     __weak GameMenuLayer* _gameMenuLayer;
     __weak GameMenuLayer* _popoverMenuLayer;
     __weak CCNode* _levelNode;
@@ -31,7 +31,12 @@
     _scoreLabel.string = [NSString stringWithFormat:@"Score: %d",score];
     self.userInteractionEnabled = YES;
     
-
+    
+    CGSize s = [CCDirector sharedDirector].viewSize;
+    hei = s.height - 90;
+    wid = s.width - 50;
+    
+    
     // Load the shapes and set invisible
     _square = (CCSprite *)[CCBReader load:@"shapes/square"];
     _square.position = ccp(200,200);
@@ -54,24 +59,12 @@
 
 // Gameplay handling and scoring
 -(void) updateAsRequired:(CCTime)delta {
-    if (_objectExists == 1)
-    {
-        _square.visible = NO;
-        [self showRandomObject];
-    }
-    else if (_objectExists == 2)
-    {
-        _circle.visible = NO;
-        [self showRandomObject];
-    }
-    else if (_objectExists == 3)
-    {
-        _triangle.visible = NO;
-        [self showRandomObject];
-    }
-    else if (_objectExists == 0)
+    if (_objectExists == 0)
     {
         [self showRandomObject];
+    } else {
+        self.userInteractionEnabled = NO;
+        [self showPopoverNamed:@"GameOverMenuLayer"];
     }
 }
 
@@ -82,19 +75,19 @@
         case 0:
             // set square
             _objectExists = 1;
-            _square.position = ccp(arc4random_uniform(518), arc4random_uniform(280));
+            _square.position = ccp(arc4random_uniform(wid), arc4random_uniform(hei));
             _square.visible = YES;
             break;
         case 1:
             //set circle
             _objectExists = 2;
-            _circle.position = ccp(arc4random_uniform(518), arc4random_uniform(280));
+            _circle.position = ccp(arc4random_uniform(wid), arc4random_uniform(hei));
             _circle.visible = YES;
             break;
         case 2:
             //set triangle
             _objectExists = 3;
-            _triangle.position = ccp(arc4random_uniform(518), arc4random_uniform(280));
+            _triangle.position = ccp(arc4random_uniform(wid), arc4random_uniform(hei));
             _triangle.visible = YES;
             break;
         default:
@@ -107,22 +100,25 @@
 -(void) touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event{
     if (self.userInteractionEnabled) {
         CGPoint touchLocation = [touch locationInNode:self];
-        if (CGRectContainsPoint(_square.boundingBox, touchLocation)) {
+        if (CGRectContainsPoint(_square.boundingBox, touchLocation) && _square.visible == YES) {
             _square.visible = NO;
-            score += 10;
+            _objectExists = 0;
+            score += 1;
             _scoreLabel.string = [NSString stringWithFormat:@"Score: %d",score];
-        } else if (CGRectContainsPoint(_circle.boundingBox, touchLocation)){
+        } else if (CGRectContainsPoint(_circle.boundingBox, touchLocation) && _circle.visible == YES){
             _circle.visible = NO;
-            score += 10;
+            _objectExists = 0;
+            score += 1;
             _scoreLabel.string = [NSString stringWithFormat:@"Score: %d",score];
-        } else if (CGRectContainsPoint(_triangle.boundingBox, touchLocation)){
+        } else if (CGRectContainsPoint(_triangle.boundingBox, touchLocation) && _triangle.visible == YES){
             _triangle.visible = NO;
-            score += 10;
+            _objectExists = 0;
+            score += 1;
             _scoreLabel.string = [NSString stringWithFormat:@"Score: %d",score];
         }
         else {
-            score -= 10;
-            _scoreLabel.string = [NSString stringWithFormat:@"Score: %d",score];
+            self.userInteractionEnabled = NO;
+            [self showPopoverNamed:@"GameOverMenuLayer"];
         }
     }
 }

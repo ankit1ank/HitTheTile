@@ -90,10 +90,24 @@
 		</dict>
 		<key>Resources/button.png</key>
 		<dict/>
+		<key>Resources/gamegraphics</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
 		<key>Resources/gamegraphics/lives.png</key>
 		<dict/>
 		<key>Resources/gamegraphics/square100px.png</key>
 		<dict/>
+		<key>Resources/menugraphics</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
 		<key>Sprites</key>
 		<dict/>
 		<key>ccbResources</key>

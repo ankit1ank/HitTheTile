@@ -8,11 +8,13 @@
 #import "SceneManager.h"
 #import "GameMenuLayer.h"
 #import "GameScene.h"
-@implementation GameMenuLayer
+@implementation GameMenuLayer {
+    __weak CCLabelTTF * _readyText;
+}
 
 
 -(void) didLoadFromCCB {
-    
+    _readyText.visible = NO;
 }
 
 -(void) shouldPauseGame {

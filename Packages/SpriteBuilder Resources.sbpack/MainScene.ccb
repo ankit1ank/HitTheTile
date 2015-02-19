@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>18</integer>
+	<integer>19</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -43,9 +43,9 @@
 		<array>
 			<dict>
 				<key>UUID</key>
-				<integer>4</integer>
+				<integer>18</integer>
 				<key>baseClass</key>
-				<string>CCSprite</string>
+				<string>CCNodeColor</string>
 				<key>children</key>
 				<array/>
 				<key>customClass</key>
@@ -82,13 +82,26 @@
 					</dict>
 					<dict>
 						<key>name</key>
+						<string>contentSize</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<integer>2</integer>
+							<integer>2</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
 						<string>anchorPoint</string>
 						<key>type</key>
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
-							<real>0.5</real>
+							<real>0.0</real>
+							<real>0.0</real>
 						</array>
 					</dict>
 					<dict>
@@ -106,46 +119,24 @@
 					</dict>
 					<dict>
 						<key>name</key>
-						<string>spriteFrame</string>
-						<key>type</key>
-						<string>SpriteFrame</string>
-						<key>value</key>
-						<array>
-							<string></string>
-							<string>Resources/background.png</string>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>normalMapSpriteFrame</string>
-						<key>type</key>
-						<string>SpriteFrame</string>
-						<key>value</key>
-						<array>
-							<string></string>
-							<string></string>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
 						<string>color</string>
 						<key>type</key>
 						<string>Color3</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
-							<real>1</real>
+							<real>0.0</real>
+							<real>0.20000000298023224</real>
+							<real>0.40000000596046448</real>
 							<real>1</real>
 						</array>
 					</dict>
 					<dict>
 						<key>name</key>
-						<string>effects</string>
+						<string>opacity</string>
 						<key>type</key>
-						<string>EffectControl</string>
+						<string>Float</string>
 						<key>value</key>
-						<array/>
+						<real>1</real>
 					</dict>
 				</array>
 			</dict>
@@ -276,7 +267,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>Resources/button.png</string>
+							<string>Resources/menugraphics/button.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -287,7 +278,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>Resources/button.png</string>
+							<string>Resources/menugraphics/button.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -311,7 +302,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>Resources/button.png</string>
+							<string>Resources/menugraphics/button.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -330,7 +321,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>Resources/button.png</string>
+							<string>Resources/menugraphics/button.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -474,6 +465,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
