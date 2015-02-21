@@ -24,4 +24,10 @@
     [[CCDirector sharedDirector] presentScene:s withTransition:t];
 }
 
++(void) presentCredits {
+    id s = [CCBReader loadAsScene:@"CreditScene"];
+    id t = [CCTransition transitionFadeWithDuration:1.0];
+    [[CCDirector sharedDirector] presentScene:s withTransition:t];
+}
+
 @end

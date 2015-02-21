@@ -75,7 +75,10 @@
 {
     if ([node respondsToSelector:selector])
     {
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [node performSelector:selector withObject:object];
+        #pragma clang diagnostic pop
     }
     if (recursive)
     {

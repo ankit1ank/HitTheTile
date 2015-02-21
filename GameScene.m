@@ -17,7 +17,7 @@
     int _objectExists;
     double _timeInterval;
     int score,hei,wid;
-    __weak CCLabelTTF* _scoreLabel;
+    __weak CCButton* _scoreLabel;
     __weak GameMenuLayer* _gameMenuLayer;
     __weak GameMenuLayer* _popoverMenuLayer;
     __weak CCNode* _levelNode;
@@ -27,8 +27,8 @@
     _gameMenuLayer.gameScene = self;
     score = 0;
     _timeInterval = 2;
-    _scoreLabel = (CCLabelTTF *)[self getChildByName:@"scoreLabel" recursively:YES];
-    _scoreLabel.string = [NSString stringWithFormat:@"Score: %d",score];
+    _scoreLabel = (CCButton *)[self getChildByName:@"scoreLabel" recursively:YES];
+    _scoreLabel.title = [NSString stringWithFormat:@"Score: %d",score];
     self.userInteractionEnabled = YES;
     
     
@@ -52,16 +52,37 @@
     [self addChild:_circle];
     [self addChild:_triangle];
     _objectExists = 0;
+    
+    
     [self schedule:@selector(updateAsRequired:) interval:_timeInterval];
 }
 
-
+-(void) controlUpdate {
+    
+    // Use this method to make game difficult with score
+    // Use 3 generators according to score - test time limits on device
+    
+    _timeInterval = 1.5 + (((double)arc4random_uniform(10))/10);
+    if (score > 5) {
+        _timeInterval = 1 + (((double)arc4random_uniform(10))/10);
+    }else if (score > 10) {
+        _timeInterval = 0.5 + (((double)arc4random_uniform(10))/10);
+    } else if (score >20){
+        _timeInterval = 0.5 + (((double)arc4random_uniform(6)+1)/10);
+    }
+    
+    
+    [self unschedule:@selector(updateAsRequired:)];
+    NSLog(@"Time interval is: %f",_timeInterval);
+    [self schedule:@selector(updateAsRequired:) interval:_timeInterval];
+}
 
 // Gameplay handling and scoring
 -(void) updateAsRequired:(CCTime)delta {
     if (_objectExists == 0)
     {
         [self showRandomObject];
+        [self controlUpdate];
     } else {
         self.userInteractionEnabled = NO;
         [self showPopoverNamed:@"GameOverMenuLayer"];
@@ -101,22 +122,26 @@
     if (self.userInteractionEnabled) {
         CGPoint touchLocation = [touch locationInNode:self];
         if (CGRectContainsPoint(_square.boundingBox, touchLocation) && _square.visible == YES) {
+            [[OALSimpleAudio sharedInstance] playEffect:@"sound/tone-beep.wav"];
             _square.visible = NO;
             _objectExists = 0;
             score += 1;
-            _scoreLabel.string = [NSString stringWithFormat:@"Score: %d",score];
+            _scoreLabel.title = [NSString stringWithFormat:@"Score: %d",score];
         } else if (CGRectContainsPoint(_circle.boundingBox, touchLocation) && _circle.visible == YES){
+            [[OALSimpleAudio sharedInstance] playEffect:@"sound/tone-beep.wav"];
             _circle.visible = NO;
             _objectExists = 0;
             score += 1;
-            _scoreLabel.string = [NSString stringWithFormat:@"Score: %d",score];
+            _scoreLabel.title = [NSString stringWithFormat:@"Score: %d",score];
         } else if (CGRectContainsPoint(_triangle.boundingBox, touchLocation) && _triangle.visible == YES){
+            [[OALSimpleAudio sharedInstance] playEffect:@"sound/tone-beep.wav"];
             _triangle.visible = NO;
             _objectExists = 0;
             score += 1;
-            _scoreLabel.string = [NSString stringWithFormat:@"Score: %d",score];
+            _scoreLabel.title = [NSString stringWithFormat:@"Score: %d",score];
         }
         else {
+            [[OALSimpleAudio sharedInstance] playEffect:@"sound/wrong.wav"];
             self.userInteractionEnabled = NO;
             [self showPopoverNamed:@"GameOverMenuLayer"];
         }

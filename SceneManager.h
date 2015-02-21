@@ -12,5 +12,6 @@
 
 +(void) presentMainMenu;
 +(void) presentGameScene;
++(void) presentCredits;
 
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		321BA2571A8F5A0000619B12 /* GameMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 321BA2561A8F5A0000619B12 /* GameMenuLayer.m */; };
 		321BA25B1A8F5C1F00619B12 /* SceneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 321BA25A1A8F5C1F00619B12 /* SceneManager.m */; };
+		32F2FB8E1A97AC29009DE412 /* CreditScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F2FB8D1A97AC29009DE412 /* CreditScene.m */; };
 		32F9B5581A8B574900872317 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9B5571A8B574900872317 /* GameScene.m */; };
 		5B121030197484FA004C1E1D /* killshapesActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* killshapesActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
@@ -149,6 +150,8 @@
 		321BA2561A8F5A0000619B12 /* GameMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMenuLayer.m; sourceTree = "<group>"; };
 		321BA2591A8F5C1F00619B12 /* SceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneManager.h; sourceTree = "<group>"; };
 		321BA25A1A8F5C1F00619B12 /* SceneManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneManager.m; sourceTree = "<group>"; };
+		32F2FB8C1A97AC29009DE412 /* CreditScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditScene.h; sourceTree = "<group>"; };
+		32F2FB8D1A97AC29009DE412 /* CreditScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditScene.m; sourceTree = "<group>"; };
 		32F9B5561A8B574900872317 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		32F9B5571A8B574900872317 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
@@ -444,6 +447,8 @@
 				32F9B5571A8B574900872317 /* GameScene.m */,
 				321BA2551A8F5A0000619B12 /* GameMenuLayer.h */,
 				321BA2561A8F5A0000619B12 /* GameMenuLayer.m */,
+				32F2FB8C1A97AC29009DE412 /* CreditScene.h */,
+				32F2FB8D1A97AC29009DE412 /* CreditScene.m */,
 				321BA2591A8F5C1F00619B12 /* SceneManager.h */,
 				321BA25A1A8F5C1F00619B12 /* SceneManager.m */,
 				D352B48019EC608A00829775 /* MetalShaders */,
@@ -619,6 +624,7 @@
 						CreatedOnToolsVersion = 6.0.1;
 					};
 					B77F1B2D17B978D7009739AE = {
+						DevelopmentTeam = CZ7VPJF3H5;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -818,6 +824,7 @@
 			files = (
 				321BA25B1A8F5C1F00619B12 /* SceneManager.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				32F2FB8E1A97AC29009DE412 /* CreditScene.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				32F9B5581A8B574900872317 /* GameScene.m in Sources */,
 				321BA2571A8F5A0000619B12 /* GameMenuLayer.m in Sources */,

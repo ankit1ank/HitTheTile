@@ -1542,7 +1542,7 @@
 						<key>type</key>
 						<string>Check</string>
 						<key>value</key>
-						<false/>
+						<true/>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1589,8 +1589,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.10000000149011612</real>
-							<real>0.10000000149011612</real>
+							<real>1.2709605693817139</real>
+							<real>1.239571213722229</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -1788,11 +1788,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>282.80001831054688</real>
-							<real>188.39999389648438</real>
+							<real>0.5</real>
+							<real>0.5</real>
 							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -2146,7 +2146,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>2</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
