@@ -9,7 +9,7 @@
 #import "GameMenuLayer.h"
 #import "GameScene.h"
 @implementation GameMenuLayer {
-    __weak CCLabelTTF * _readyText;
+    CCLabelTTF * _readyText;
 }
 
 
@@ -24,7 +24,7 @@
 
 -(void) applicationWillResignActive:(UIApplication *)application
 {
-    _gameScene.userInteractionEnabled = NO;
+    [_gameScene enableTouch];
     [self shouldPauseGame];
 }
 

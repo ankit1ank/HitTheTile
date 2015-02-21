@@ -62,23 +62,13 @@
     return [CCBReader loadAsScene:@"MainScene"];
 }
 
--(void) applicationWillResignActive:(UIApplication *)application
-{
-    CCScene* scene = [CCDirector sharedDirector].runningScene;
-    [self performSelector:_cmd onNode:scene withObject:application recursive:YES];
-    [super applicationWillResignActive:application];
-}
-
 
 
 -(void) performSelector:(SEL)selector onNode:(CCNode*)node withObject:(id)object recursive:(BOOL)recursive
 {
     if ([node respondsToSelector:selector])
     {
-        #pragma clang diagnostic push
-        #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [node performSelector:selector withObject:object];
-        #pragma clang diagnostic pop
     }
     if (recursive)
     {
@@ -88,5 +78,13 @@
         }
     }
 }
+
+-(void) applicationWillResignActive:(UIApplication *)application
+{
+    CCScene* scene = [CCDirector sharedDirector].runningScene;
+    [self performSelector:_cmd onNode:scene withObject:application recursive:YES];
+    [super applicationWillResignActive:application];
+}
+
 
 @end

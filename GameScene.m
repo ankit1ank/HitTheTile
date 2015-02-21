@@ -181,6 +181,9 @@
     self.userInteractionEnabled = NO;
 }
 
-
+-(void) applicationWillResignActive:(UIApplication *)application
+{
+    [_gameMenuLayer shouldPauseGame];
+}
 
 @end
