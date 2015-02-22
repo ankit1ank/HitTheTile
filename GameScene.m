@@ -14,6 +14,7 @@
     __weak CCSprite* _square;
     __weak CCSprite* _circle;
     __weak CCSprite* _triangle;
+    __weak CCSprite* _miss;
     int _objectExists;
     double _timeInterval;
     int score,hei,wid;
@@ -24,6 +25,9 @@
 }
 
 -(void) didLoadFromCCB {
+    // Remove nect line
+    _miss.visible = NO;
+    
     _gameMenuLayer.gameScene = self;
     score = 0;
     _timeInterval = 2;
@@ -62,19 +66,24 @@
     // Use this method to make game difficult with score
     // Use 3 generators according to score - test time limits on device
     
-    _timeInterval = 1.5 + (((double)arc4random_uniform(10))/10);
-    if (score > 5) {
-        _timeInterval = 1 + (((double)arc4random_uniform(10))/10);
-    }else if (score > 10) {
-        _timeInterval = 0.5 + (((double)arc4random_uniform(10))/10);
-    } else if (score >20){
-        _timeInterval = 0.5 + (((double)arc4random_uniform(6)+1)/10);
+    _timeInterval = 0.4 + [self genInterval];
+    
+    if (score < 5) {
+        _timeInterval = 0.9 + [self genInterval];
+    }else if (score < 10) {
+        _timeInterval = 0.6+ [self genInterval];
     }
     
     
     [self unschedule:@selector(updateAsRequired:)];
     NSLog(@"Time interval is: %f",_timeInterval);
     [self schedule:@selector(updateAsRequired:) interval:_timeInterval];
+}
+
+-(double) genInterval {
+    double a = arc4random_uniform(4);
+    a = a/10;
+    return a;
 }
 
 // Gameplay handling and scoring
@@ -85,6 +94,7 @@
         [self controlUpdate];
     } else {
         self.userInteractionEnabled = NO;
+        // Show the message too late
         [self showPopoverNamed:@"GameOverMenuLayer"];
     }
 }
@@ -141,6 +151,10 @@
             _scoreLabel.title = [NSString stringWithFormat:@"Score: %d",score];
         }
         else {
+            // Show the location of wrong touch
+            
+            _miss.position = touchLocation;
+            
             [[OALSimpleAudio sharedInstance] playEffect:@"sound/wrong.wav"];
             self.userInteractionEnabled = NO;
             [self showPopoverNamed:@"GameOverMenuLayer"];
@@ -180,6 +194,8 @@
 -(void) disableTouch {
     self.userInteractionEnabled = NO;
 }
+
+// Pauses game when game is suspended
 
 -(void) applicationWillResignActive:(UIApplication *)application
 {

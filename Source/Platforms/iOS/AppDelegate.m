@@ -27,6 +27,7 @@
 
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
+//#import "iAd/iAd.h"
 
 @implementation AppController
 
@@ -54,6 +55,9 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
+    // Load interstitial ads early
+    // [UIViewController prepareInterstitialAds];
+    
     return YES;
 }
 
@@ -68,7 +72,10 @@
 {
     if ([node respondsToSelector:selector])
     {
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [node performSelector:selector withObject:object];
+        #pragma clang diagnostic pop
     }
     if (recursive)
     {
