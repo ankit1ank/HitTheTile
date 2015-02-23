@@ -13,4 +13,5 @@
 -(void) enableTouch;
 -(void) showPopoverNamed:(NSString*) popoverName;
 -(void) removePopover;
+-(int) getScore;
 @end

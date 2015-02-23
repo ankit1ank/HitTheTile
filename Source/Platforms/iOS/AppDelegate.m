@@ -23,11 +23,13 @@
  * THE SOFTWARE.
  */
 
+@import GoogleMobileAds;
+#import "MyAdMobController.h"
 #import "cocos2d.h"
 
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
-//#import "iAd/iAd.h"
+
 
 @implementation AppController
 
@@ -55,14 +57,25 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
-    // Load interstitial ads early
-    // [UIViewController prepareInterstitialAds];
+    // Load admob interstitial
+    [[MyAdMobController sharedController] loadInterstitial];
     
+    /*
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber * highScore = [defaults objectForKey:@"HighScore"];
+    // Initialize if no high score exists
+    if (highScore == Nil) {
+        highScore = 0;
+        [defaults setObject:highScore forKey:@"HighScore"];
+        [defaults synchronize];
+    }
+    */
     return YES;
 }
 
 - (CCScene*) startScene
 {
+
     return [CCBReader loadAsScene:@"MainScene"];
 }
 

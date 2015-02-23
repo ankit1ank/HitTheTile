@@ -5,41 +5,48 @@
 //  Created by Ankit Goel on 11/02/15.
 //  Copyright (c) 2015 Apportable. All rights reserved.
 //
-
+@import GoogleMobileAds;
 #import "GameScene.h"
 #import "GameMenuLayer.h"
 #include <stdlib.h>
+#import "MyAdMobController.h"
 
 @implementation GameScene {
     __weak CCSprite* _square;
     __weak CCSprite* _circle;
     __weak CCSprite* _triangle;
-    __weak CCSprite* _miss;
+ 
     int _objectExists;
     double _timeInterval;
-    int score,hei,wid;
+    int score,hei,wid,tempScore;
     __weak CCButton* _scoreLabel;
     __weak GameMenuLayer* _gameMenuLayer;
     __weak GameMenuLayer* _popoverMenuLayer;
     __weak CCNode* _levelNode;
+    __weak CCLabelTTF* _highScoreLabel;
 }
 
 -(void) didLoadFromCCB {
-    // Remove nect line
-    _miss.visible = NO;
+
     
-    _gameMenuLayer.gameScene = self;
+    // High score property list initialization
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber * highScore = [defaults objectForKey:@"HighScore"];
+    tempScore = [highScore intValue];
     score = 0;
-    _timeInterval = 2;
+    
     _scoreLabel = (CCButton *)[self getChildByName:@"scoreLabel" recursively:YES];
     _scoreLabel.title = [NSString stringWithFormat:@"Score: %d",score];
     self.userInteractionEnabled = YES;
+    _highScoreLabel.string = [NSString stringWithFormat:@"Best: %d",tempScore];
     
-    
+    _timeInterval = 1;
     CGSize s = [CCDirector sharedDirector].viewSize;
     hei = s.height - 90;
     wid = s.width - 50;
     
+    // Used for showing menus
+    _gameMenuLayer.gameScene = self;
     
     // Load the shapes and set invisible
     _square = (CCSprite *)[CCBReader load:@"shapes/square"];
@@ -63,15 +70,16 @@
 
 -(void) controlUpdate {
     
-    // Use this method to make game difficult with score
-    // Use 3 generators according to score - test time limits on device
+    // This method controls difficulty of the game
     
-    _timeInterval = 0.4 + [self genInterval];
+    _timeInterval = 0.5 + [self genInterval];
     
     if (score < 5) {
         _timeInterval = 0.9 + [self genInterval];
     }else if (score < 10) {
-        _timeInterval = 0.6+ [self genInterval];
+        _timeInterval = 0.8 + [self genInterval];
+    } else if (score < 15) {
+        _timeInterval = 0.7 + [self genInterval];
     }
     
     
@@ -95,6 +103,15 @@
     } else {
         self.userInteractionEnabled = NO;
         // Show the message too late
+        
+        // Save high score
+        if (score > tempScore) {
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSNumber * updateHighScore = [NSNumber numberWithInt:score];
+            [defaults setObject:updateHighScore forKey:@"HighScore"];
+            [defaults synchronize];
+            _highScoreLabel.string = [NSString stringWithFormat:@"Best: %d",score];
+        }
         [self showPopoverNamed:@"GameOverMenuLayer"];
     }
 }
@@ -128,6 +145,7 @@
     }
 }
 
+// This method handles the user touches.
 -(void) touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event{
     if (self.userInteractionEnabled) {
         CGPoint touchLocation = [touch locationInNode:self];
@@ -151,12 +169,17 @@
             _scoreLabel.title = [NSString stringWithFormat:@"Score: %d",score];
         }
         else {
-            // Show the location of wrong touch
-            
-            _miss.position = touchLocation;
-            
+            // Show the location of wrong touc
             [[OALSimpleAudio sharedInstance] playEffect:@"sound/wrong.wav"];
             self.userInteractionEnabled = NO;
+            // Save highscore
+            if (score > tempScore) {
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                NSNumber * updateHighScore = [NSNumber numberWithInt:score];
+                [defaults setObject:updateHighScore forKey:@"HighScore"];
+                [defaults synchronize];
+                _highScoreLabel.string = [NSString stringWithFormat:@"Best: %d",score];
+            }
             [self showPopoverNamed:@"GameOverMenuLayer"];
         }
     }
@@ -165,6 +188,11 @@
 // Menu buttons and interface
 
 -(void) showPopoverNamed:(NSString *)name {
+    //Admob show
+    UIViewController *rootViewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    
+    [[MyAdMobController sharedController] showInterstitialOnViewController:rootViewController];
+    
     if (_popoverMenuLayer==nil) {
         GameMenuLayer* newMenuLayer = (GameMenuLayer*)[CCBReader load:name];
         [self addChild:newMenuLayer];
@@ -178,6 +206,7 @@
 }
 
 -(void) removePopover {
+    
     if (_popoverMenuLayer) {
         [_popoverMenuLayer removeFromParent];
         _popoverMenuLayer = nil;
@@ -185,6 +214,10 @@
         _gameMenuLayer.visible = YES;
         _levelNode.paused = NO;
     }
+}
+
+-(int) getScore {
+    return score;
 }
 
 // Enabling and disabling touch for pause menu
@@ -195,7 +228,7 @@
     self.userInteractionEnabled = NO;
 }
 
-// Pauses game when game is suspended
+// Pauses game when game is suspended during gameplay
 
 -(void) applicationWillResignActive:(UIApplication *)application
 {
