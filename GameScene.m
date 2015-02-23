@@ -11,14 +11,21 @@
 #include <stdlib.h>
 #import "MyAdMobController.h"
 
+
 @implementation GameScene {
+    // Shapes declaration
     __weak CCSprite* _square;
     __weak CCSprite* _circle;
     __weak CCSprite* _triangle;
- 
+    
+    // Gameover Animation variables
+    __weak CCNode* _missShot;
+    __weak CCNode* _tooLate;
+    
     int _objectExists;
     double _timeInterval;
     int score,hei,wid,tempScore;
+    
     __weak CCButton* _scoreLabel;
     __weak GameMenuLayer* _gameMenuLayer;
     __weak GameMenuLayer* _popoverMenuLayer;
@@ -64,6 +71,11 @@
     [self addChild:_triangle];
     _objectExists = 0;
     
+    // Setup for gameover animations
+    _missShot = (CCNode*)[self getChildByName:@"missShot" recursively:YES];
+    _tooLate = (CCNode*)[self getChildByName:@"tooLate" recursively:YES];
+    _missShot.visible = NO;
+    _tooLate.visible = NO;
     
     [self schedule:@selector(updateAsRequired:) interval:_timeInterval];
 }
@@ -84,7 +96,10 @@
     
     
     [self unschedule:@selector(updateAsRequired:)];
-    NSLog(@"Time interval is: %f",_timeInterval);
+    
+    // Uncomment below for testing time duration
+    //NSLog(@"Time interval is: %f",_timeInterval);
+    
     [self schedule:@selector(updateAsRequired:) interval:_timeInterval];
 }
 
@@ -103,6 +118,8 @@
     } else {
         self.userInteractionEnabled = NO;
         // Show the message too late
+         _tooLate.visible = YES;
+        [_tooLate.animationManager runAnimationsForSequenceNamed:@"lateAnimation"];
         
         // Save high score
         if (score > tempScore) {
@@ -112,7 +129,8 @@
             [defaults synchronize];
             _highScoreLabel.string = [NSString stringWithFormat:@"Best: %d",score];
         }
-        [self showPopoverNamed:@"GameOverMenuLayer"];
+        // Load gameover popup later so animation can finish
+        [self performSelector:@selector(delayGameOverPopup) withObject:nil afterDelay:0.5 ];
     }
 }
 
@@ -169,7 +187,11 @@
             _scoreLabel.title = [NSString stringWithFormat:@"Score: %d",score];
         }
         else {
-            // Show the location of wrong touc
+            // Missed shot animation
+            [self unschedule:@selector(updateAsRequired:)];
+            _missShot.visible = YES;
+            [_missShot.animationManager runAnimationsForSequenceNamed:@"missAnimation"];
+            
             [[OALSimpleAudio sharedInstance] playEffect:@"sound/wrong.wav"];
             self.userInteractionEnabled = NO;
             // Save highscore
@@ -180,19 +202,24 @@
                 [defaults synchronize];
                 _highScoreLabel.string = [NSString stringWithFormat:@"Best: %d",score];
             }
-            [self showPopoverNamed:@"GameOverMenuLayer"];
+            [self performSelector:@selector(delayGameOverPopup) withObject:nil afterDelay:0.5 ];
         }
     }
+}
+
+// Delay gameover popup so animation can complete
+-(void) delayGameOverPopup {
+    [self showPopoverNamed:@"GameOverMenuLayer"];
 }
 
 // Menu buttons and interface
 
 -(void) showPopoverNamed:(NSString *)name {
-    //Admob show
+    //Show ad before menu loads
     UIViewController *rootViewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
     
     [[MyAdMobController sharedController] showInterstitialOnViewController:rootViewController];
-    
+    // load menu
     if (_popoverMenuLayer==nil) {
         GameMenuLayer* newMenuLayer = (GameMenuLayer*)[CCBReader load:name];
         [self addChild:newMenuLayer];

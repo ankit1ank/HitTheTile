@@ -4,13 +4,10 @@
 //
 
 #define MY_INTERSTITIAL_ID @"ca-app-pub-4823077198226744/9476121516"
-#define MY_BANNER_ID @"ca-app-pub-4823077198226744/7999388316"
+//#define MY_BANNER_ID @"put add unit id"
 
 #import <Foundation/Foundation.h>
 @import GoogleMobileAds;
-//#import "GADInterstitial.h"
-//#import "GADBannerView.h"
-//#import "GADRequest.h"
 
 @protocol MyAdMobControllerDelagate <NSObject>
 
@@ -18,23 +15,23 @@
 - (void)MyInterstitial:(GADInterstitial *)ad didFailToReceiveAdWithError:(GADRequestError *)error;
 - (void)MyInterstitialNotLoaded;
 
-- (void)MyAdViewDidReceiveAd:(GADBannerView *)view;
-- (void)MyAdView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error;
+//- (void)MyAdViewDidReceiveAd:(GADBannerView *)view;
+//- (void)MyAdView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error;
 
 @end
 
-@interface MyAdMobController : NSObject <GADInterstitialDelegate, GADBannerViewDelegate>
+@interface MyAdMobController : NSObject <GADInterstitialDelegate> //, GADBannerViewDelegate>
 {
     GADInterstitial *interstitial_;
-    GADBannerView *bannerView_;
+    //GADBannerView *bannerView_;
 }
 
 @property (nonatomic, strong) id delegate;
 
 + (MyAdMobController *)sharedController;
 - (void)loadInterstitial;
-- (void)loadBannerView;
+//- (void)loadBannerView;
 - (void)showInterstitialOnViewController:(UIViewController *)viewController;
-- (void)addBannerToView:(UIView *)view;
+//- (void)addBannerToView:(UIView *)view;
 
 @end

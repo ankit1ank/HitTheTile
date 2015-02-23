@@ -74,6 +74,7 @@
     }
 }
 
+/*
 #pragma mark Banner View
 
 - (void)loadBannerView
@@ -117,5 +118,5 @@
         [self loadBannerView];
     }
 }
-
+*/
 @end
