@@ -185,7 +185,7 @@
 		5B121033197485FE004C1E1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Platforms/Android/Info.plist; sourceTree = "<group>"; };
 		5B121034197485FE004C1E1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Platforms/iOS/Info.plist; sourceTree = "<group>"; };
 		5BA4619E1974C88900785744 /* AndroidManifest.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = AndroidManifest.xml; path = Platforms/Android/AndroidManifest.xml; sourceTree = "<group>"; };
-		7A4035FF19DDEE84007B6E8F /* killshapes Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "killshapes Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A4035FF19DDEE84007B6E8F /* TapTheTile Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TapTheTile Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A40360219DDEE84007B6E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Platforms/Mac/Info.plist; sourceTree = "<group>"; };
 		7A40360319DDEE84007B6E8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/Platforms/Mac/main.m; sourceTree = "<group>"; };
 		7A40360519DDEE84007B6E8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/Platforms/Mac/AppDelegate.h; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 		7AFCD5DD19E9BDC200BCCCDA /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Source/Bridging-Header.h"; sourceTree = "<group>"; };
 		7BF6AF9F1A425F9800FFF9BA /* JavaFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaFoundation.framework; path = "../../../../../../../Library/SBAndroid/Application Support/Developer/Shared/Xcode/Platforms/Android.platform/Developer/SDKs/SBAndroid.sdk/System/Library/Frameworks/JavaFoundation.framework"; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		927F61BF196C771E000F43EF /* killshapes Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "killshapes Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		927F61BF196C771E000F43EF /* TapTheTile Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TapTheTile Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
 		B71F5909188484E7003F4D28 /* iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPad.png; path = Icons/iPad.png; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 		B73789861807631A0076A88C /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = Source/Prefix.pch; sourceTree = SOURCE_ROOT; };
 		B7378992180767190076A88C /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = Source/MainScene.h; sourceTree = "<group>"; };
 		B7378993180767190076A88C /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainScene.m; path = Source/MainScene.m; sourceTree = "<group>"; };
-		B77F1B2E17B978D7009739AE /* killshapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = killshapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B77F1B2E17B978D7009739AE /* TapTheTile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapTheTile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77F1B3117B978D7009739AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B77F1B3317B978D7009739AE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		B77F1B3517B978D7009739AE /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -524,9 +524,9 @@
 		B77F1B2F17B978D7009739AE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B77F1B2E17B978D7009739AE /* killshapes.app */,
-				927F61BF196C771E000F43EF /* killshapes Android.app */,
-				7A4035FF19DDEE84007B6E8F /* killshapes Mac.app */,
+				B77F1B2E17B978D7009739AE /* TapTheTile.app */,
+				927F61BF196C771E000F43EF /* TapTheTile Android.app */,
+				7A4035FF19DDEE84007B6E8F /* TapTheTile Mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -595,9 +595,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7A4035FE19DDEE84007B6E8F /* killshapes Mac */ = {
+		7A4035FE19DDEE84007B6E8F /* TapTheTile Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7A40361E19DDEE84007B6E8F /* Build configuration list for PBXNativeTarget "killshapes Mac" */;
+			buildConfigurationList = 7A40361E19DDEE84007B6E8F /* Build configuration list for PBXNativeTarget "TapTheTile Mac" */;
 			buildPhases = (
 				7A4035FB19DDEE84007B6E8F /* Sources */,
 				7A4035FC19DDEE84007B6E8F /* Frameworks */,
@@ -608,14 +608,14 @@
 			dependencies = (
 				7A97911619E631A1001FFC4D /* PBXTargetDependency */,
 			);
-			name = "killshapes Mac";
+			name = "TapTheTile Mac";
 			productName = "killshapes Mac";
-			productReference = 7A4035FF19DDEE84007B6E8F /* killshapes Mac.app */;
+			productReference = 7A4035FF19DDEE84007B6E8F /* TapTheTile Mac.app */;
 			productType = "com.apple.product-type.application";
 		};
-		927F6198196C771E000F43EF /* killshapes Android */ = {
+		927F6198196C771E000F43EF /* TapTheTile Android */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 927F61BC196C771E000F43EF /* Build configuration list for PBXNativeTarget "killshapes Android" */;
+			buildConfigurationList = 927F61BC196C771E000F43EF /* Build configuration list for PBXNativeTarget "TapTheTile Android" */;
 			buildPhases = (
 				927F619B196C771E000F43EF /* Run Script */,
 				927F619C196C771E000F43EF /* Sources */,
@@ -627,14 +627,14 @@
 			dependencies = (
 				7A97912219E6321C001FFC4D /* PBXTargetDependency */,
 			);
-			name = "killshapes Android";
+			name = "TapTheTile Android";
 			productName = Example;
-			productReference = 927F61BF196C771E000F43EF /* killshapes Android.app */;
+			productReference = 927F61BF196C771E000F43EF /* TapTheTile Android.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B77F1B2D17B978D7009739AE /* killshapes iOS */ = {
+		B77F1B2D17B978D7009739AE /* TapTheTile iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B77F1CDE17B978D8009739AE /* Build configuration list for PBXNativeTarget "killshapes iOS" */;
+			buildConfigurationList = B77F1CDE17B978D8009739AE /* Build configuration list for PBXNativeTarget "TapTheTile iOS" */;
 			buildPhases = (
 				D2E0167A18D782EC00927430 /* Run Script */,
 				B77F1B2A17B978D7009739AE /* Sources */,
@@ -647,9 +647,9 @@
 			dependencies = (
 				7A97911019E6319A001FFC4D /* PBXTargetDependency */,
 			);
-			name = "killshapes iOS";
+			name = "TapTheTile iOS";
 			productName = Example;
-			productReference = B77F1B2E17B978D7009739AE /* killshapes.app */;
+			productReference = B77F1B2E17B978D7009739AE /* TapTheTile.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -674,7 +674,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B77F1B2917B978D7009739AE /* Build configuration list for PBXProject "killshapes" */;
+			buildConfigurationList = B77F1B2917B978D7009739AE /* Build configuration list for PBXProject "TapTheTile" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -693,9 +693,9 @@
 			);
 			projectRoot = "";
 			targets = (
-				B77F1B2D17B978D7009739AE /* killshapes iOS */,
-				927F6198196C771E000F43EF /* killshapes Android */,
-				7A4035FE19DDEE84007B6E8F /* killshapes Mac */,
+				B77F1B2D17B978D7009739AE /* TapTheTile iOS */,
+				927F6198196C771E000F43EF /* TapTheTile Android */,
+				7A4035FE19DDEE84007B6E8F /* TapTheTile Mac */,
 			);
 		};
 /* End PBXProject section */
@@ -935,7 +935,7 @@
 					"-lz",
 				);
 				PRODUCT_MODULE_NAME = killshapes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "TapTheTile Mac";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -979,7 +979,7 @@
 					"-lz",
 				);
 				PRODUCT_MODULE_NAME = killshapes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "TapTheTile Mac";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
 			};
@@ -1027,7 +1027,7 @@
 					"-landroid",
 				);
 				PRODUCT_MODULE_NAME = killshapes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "TapTheTile Android";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = sbandroid;
 				WRAPPER_EXTENSION = app;
@@ -1075,7 +1075,7 @@
 					"-landroid",
 				);
 				PRODUCT_MODULE_NAME = killshapes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "TapTheTile Android";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = sbandroid;
 				VALIDATE_PRODUCT = YES;
@@ -1178,7 +1178,7 @@
 					"-lz",
 					"-ObjC",
 				);
-				PRODUCT_NAME = killshapes;
+				PRODUCT_NAME = TapTheTile;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1215,7 +1215,7 @@
 					"-lz",
 					"-ObjC",
 				);
-				PRODUCT_NAME = killshapes;
+				PRODUCT_NAME = TapTheTile;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
@@ -1226,7 +1226,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7A40361E19DDEE84007B6E8F /* Build configuration list for PBXNativeTarget "killshapes Mac" */ = {
+		7A40361E19DDEE84007B6E8F /* Build configuration list for PBXNativeTarget "TapTheTile Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7A40361919DDEE84007B6E8F /* Debug */,
@@ -1235,7 +1235,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		927F61BC196C771E000F43EF /* Build configuration list for PBXNativeTarget "killshapes Android" */ = {
+		927F61BC196C771E000F43EF /* Build configuration list for PBXNativeTarget "TapTheTile Android" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				927F61BD196C771E000F43EF /* Debug */,
@@ -1244,7 +1244,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B77F1B2917B978D7009739AE /* Build configuration list for PBXProject "killshapes" */ = {
+		B77F1B2917B978D7009739AE /* Build configuration list for PBXProject "TapTheTile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B77F1CDC17B978D8009739AE /* Debug */,
@@ -1253,7 +1253,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B77F1CDE17B978D8009739AE /* Build configuration list for PBXNativeTarget "killshapes iOS" */ = {
+		B77F1CDE17B978D8009739AE /* Build configuration list for PBXNativeTarget "TapTheTile iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B77F1CDF17B978D8009739AE /* Debug */,

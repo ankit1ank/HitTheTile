@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "927F6198196C771E000F43EF"
-               BuildableName = "killshapes Android.app"
-               BlueprintName = "killshapes Android"
-               ReferencedContainer = "container:killshapes.xcodeproj">
+               BuildableName = "TapTheTile Android.app"
+               BlueprintName = "TapTheTile Android"
+               ReferencedContainer = "container:TapTheTile.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "927F6198196C771E000F43EF"
-            BuildableName = "killshapes Android.app"
-            BlueprintName = "killshapes Android"
-            ReferencedContainer = "container:killshapes.xcodeproj">
+            BuildableName = "TapTheTile Android.app"
+            BlueprintName = "TapTheTile Android"
+            ReferencedContainer = "container:TapTheTile.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "927F6198196C771E000F43EF"
-            BuildableName = "killshapes Android.app"
-            BlueprintName = "killshapes Android"
-            ReferencedContainer = "container:killshapes.xcodeproj">
+            BuildableName = "TapTheTile Android.app"
+            BlueprintName = "TapTheTile Android"
+            ReferencedContainer = "container:TapTheTile.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "927F6198196C771E000F43EF"
-            BuildableName = "killshapes Android.app"
-            BlueprintName = "killshapes Android"
-            ReferencedContainer = "container:killshapes.xcodeproj">
+            BuildableName = "TapTheTile Android.app"
+            BlueprintName = "TapTheTile Android"
+            ReferencedContainer = "container:TapTheTile.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -34,7 +34,6 @@
 }
 
 -(void) didLoadFromCCB {
-
     
     // High score property list initialization
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -118,7 +117,10 @@
     } else {
         self.userInteractionEnabled = NO;
         // Show the message too late
-         _tooLate.visible = YES;
+        _square.visible = NO;
+        _triangle.visible = NO;
+        _circle.visible = NO;
+        _tooLate.visible = YES;
         [_tooLate.animationManager runAnimationsForSequenceNamed:@"lateAnimation"];
         
         // Save high score
@@ -187,12 +189,20 @@
             _scoreLabel.title = [NSString stringWithFormat:@"Score: %d",score];
         }
         else {
-            // Missed shot animation
+            // Unschedule the update method so tooLate animation does not start
             [self unschedule:@selector(updateAsRequired:)];
+            
+            //Play sound
+            [[OALSimpleAudio sharedInstance] playEffect:@"sound/wrong.wav"];
+            
+            _square.visible = NO;
+            _triangle.visible = NO;
+            _circle.visible = NO;
+            // Missed shot animation
             _missShot.visible = YES;
             [_missShot.animationManager runAnimationsForSequenceNamed:@"missAnimation"];
             
-            [[OALSimpleAudio sharedInstance] playEffect:@"sound/wrong.wav"];
+            
             self.userInteractionEnabled = NO;
             // Save highscore
             if (score > tempScore) {
@@ -215,10 +225,7 @@
 // Menu buttons and interface
 
 -(void) showPopoverNamed:(NSString *)name {
-    //Show ad before menu loads
-    UIViewController *rootViewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
     
-    [[MyAdMobController sharedController] showInterstitialOnViewController:rootViewController];
     // load menu
     if (_popoverMenuLayer==nil) {
         GameMenuLayer* newMenuLayer = (GameMenuLayer*)[CCBReader load:name];

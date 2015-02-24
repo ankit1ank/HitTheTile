@@ -41,6 +41,10 @@
 }
 
 -(void) shouldResumeGame {
+    //Admob show
+    UIViewController *rootViewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    
+    [[MyAdMobController sharedController] showInterstitialOnViewController:rootViewController];
     [_gameScene enableTouch];
     CCAnimationManager* am = self.animationManager;
     if ([am.runningSequenceName isEqualToString:@"resume game"] == NO) {
@@ -54,6 +58,7 @@
 }
 
 -(void) shouldRestartGame {
+    
     [SceneManager presentGameScene];
 }
 
