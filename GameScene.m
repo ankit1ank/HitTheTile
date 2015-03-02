@@ -83,7 +83,7 @@
     
     // This method controls difficulty of the game
     
-    _timeInterval = 0.5 + [self genInterval];
+    _timeInterval = 0.45 + [self genIntervalSmall];
     
     if (score < 5) {
         _timeInterval = 0.9 + [self genInterval];
@@ -91,7 +91,10 @@
         _timeInterval = 0.8 + [self genInterval];
     } else if (score < 15) {
         _timeInterval = 0.7 + [self genInterval];
+    } else if (score < 30) {
+        _timeInterval = 0.5 + [self genInterval];
     }
+
     
     
     [self unschedule:@selector(updateAsRequired:)];
@@ -104,6 +107,12 @@
 
 -(double) genInterval {
     double a = arc4random_uniform(4);
+    a = a/10;
+    return a;
+}
+
+-(double) genIntervalSmall {
+    double a = arc4random_uniform(3);
     a = a/10;
     return a;
 }

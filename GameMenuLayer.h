@@ -8,7 +8,10 @@
 
 #import "CCNode.h"
 @class GameScene;
+
 @interface GameMenuLayer : CCNode
+
 @property (weak) GameScene* gameScene;
 -(void) shouldPauseGame;
+
 @end

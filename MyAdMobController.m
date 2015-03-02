@@ -33,7 +33,7 @@
     //Test lines
     GADRequest *request = [GADRequest request];
     // Uncomment below line to test on iphone 4s
-    //request.testDevices = @[@"5fd507e09b7b467853a2735f8112468ad766eba7"];
+    request.testDevices = @[@"5fd507e09b7b467853a2735f8112468ad766eba7"];
     
     [interstitial_ loadRequest:request];
 }

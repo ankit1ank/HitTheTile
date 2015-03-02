@@ -10,6 +10,7 @@
 #import "SceneManager.h"
 #import "GameMenuLayer.h"
 #import "GameScene.h"
+
 @implementation GameMenuLayer {
     CCLabelTTF * _readyText;
     CCButton* _score;
