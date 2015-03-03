@@ -25,7 +25,10 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSNumber * highScore = [defaults objectForKey:@"HighScore"];
     tempScore = [highScore intValue];
-    score = [_gameScene getScore];
+
+    NSNumber * Score = [defaults objectForKey:@"Score"];
+    score = [Score intValue];
+
     _score.title = [NSString stringWithFormat:@"Score: %d",score];
     _best.title = [NSString stringWithFormat:@"Best: %d",tempScore];
 }

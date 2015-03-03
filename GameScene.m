@@ -132,6 +132,11 @@
         _tooLate.visible = YES;
         [_tooLate.animationManager runAnimationsForSequenceNamed:@"lateAnimation"];
         
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSNumber * updateScore = [NSNumber numberWithInt:score];
+        [defaults setObject:updateScore forKey:@"Score"];
+        [defaults synchronize];
+
         // Save high score
         if (score > tempScore) {
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -213,6 +218,10 @@
             
             
             self.userInteractionEnabled = NO;
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSNumber * updateScore = [NSNumber numberWithInt:score];
+            [defaults setObject:updateScore forKey:@"Score"];
+            [defaults synchronize];
             // Save highscore
             if (score > tempScore) {
                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
