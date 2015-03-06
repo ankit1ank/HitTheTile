@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		321BA2571A8F5A0000619B12 /* GameMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 321BA2561A8F5A0000619B12 /* GameMenuLayer.m */; };
 		321BA25B1A8F5C1F00619B12 /* SceneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 321BA25A1A8F5C1F00619B12 /* SceneManager.m */; };
-		3240859B1A99E17F005D6463 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3240859A1A99E17F005D6463 /* iAd.framework */; };
 		327CD1741A9DA3B100F32D9C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 327CD14A1A9D992A00F32D9C /* Default-568h@2x.png */; };
 		327CD1751A9DA3B100F32D9C /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 327CD14B1A9D992A00F32D9C /* Default-Landscape@2x~ipad.png */; };
 		327CD1761A9DA3B100F32D9C /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 327CD14C1A9D992A00F32D9C /* Default-Landscape~ipad.png */; };
@@ -32,6 +31,10 @@
 		327CD1CA1A9DA70400F32D9C /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 327CD1B91A9DA70400F32D9C /* Icon-Small@3x.png */; };
 		327CD1CB1A9DA70400F32D9C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 327CD1BA1A9DA70400F32D9C /* Icon.png */; };
 		327CD1CC1A9DA70400F32D9C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 327CD1BB1A9DA70400F32D9C /* Icon@2x.png */; };
+		3298B2F41AAA27D6009A668A /* ABGameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3298B2F31AAA27D6009A668A /* ABGameKitHelper.m */; };
+		3298B2F71AAA2865009A668A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3298B2F61AAA2865009A668A /* GameKit.framework */; };
+		3298B2F91AAA2872009A668A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3298B2F81AAA2872009A668A /* CFNetwork.framework */; };
+		3298B2FB1AAA287E009A668A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3298B2FA1AAA287E009A668A /* Security.framework */; };
 		32B4DA431A9B1AB60005DBAD /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B4DA421A9B1AB60005DBAD /* GoogleMobileAds.framework */; };
 		32B4DA461A9B1ACB0005DBAD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B4DA451A9B1ACB0005DBAD /* AdSupport.framework */; };
 		32B4DA481A9B1AE00005DBAD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B4DA471A9B1AE00005DBAD /* CoreTelephony.framework */; };
@@ -168,6 +171,11 @@
 		327CD1B91A9DA70400F32D9C /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@3x.png"; path = "Icons/Icon-Small@3x.png"; sourceTree = "<group>"; };
 		327CD1BA1A9DA70400F32D9C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Icons/Icon.png; sourceTree = "<group>"; };
 		327CD1BB1A9DA70400F32D9C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Icons/Icon@2x.png"; sourceTree = "<group>"; };
+		3298B2F21AAA27D6009A668A /* ABGameKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABGameKitHelper.h; sourceTree = "<group>"; };
+		3298B2F31AAA27D6009A668A /* ABGameKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABGameKitHelper.m; sourceTree = "<group>"; };
+		3298B2F61AAA2865009A668A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		3298B2F81AAA2872009A668A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3298B2FA1AAA287E009A668A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		32B4DA421A9B1AB60005DBAD /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../repos/GoogleMobileAdsSdkiOS-7.0.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		32B4DA451A9B1ACB0005DBAD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		32B4DA471A9B1AE00005DBAD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -290,6 +298,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3298B2FB1AAA287E009A668A /* Security.framework in Frameworks */,
+				3298B2F91AAA2872009A668A /* CFNetwork.framework in Frameworks */,
+				3298B2F71AAA2865009A668A /* GameKit.framework in Frameworks */,
 				32CB73C91AA4CE7B00790001 /* libGoogleAnalyticsServices.a in Frameworks */,
 				32CB73C71AA4CE6200790001 /* libsqlite3.dylib in Frameworks */,
 				32CB73C51AA4CE5200790001 /* libz.dylib in Frameworks */,
@@ -303,7 +314,6 @@
 				32B4DA481A9B1AE00005DBAD /* CoreTelephony.framework in Frameworks */,
 				32B4DA461A9B1ACB0005DBAD /* AdSupport.framework in Frameworks */,
 				32B4DA431A9B1AB60005DBAD /* GoogleMobileAds.framework in Frameworks */,
-				3240859B1A99E17F005D6463 /* iAd.framework in Frameworks */,
 				7A97911819E631CD001FFC4D /* libcocos2d.a in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
@@ -513,6 +523,8 @@
 				321BA25A1A8F5C1F00619B12 /* SceneManager.m */,
 				32B4DA531A9B1C7E0005DBAD /* MyAdMobController.h */,
 				32B4DA541A9B1C7E0005DBAD /* MyAdMobController.m */,
+				3298B2F21AAA27D6009A668A /* ABGameKitHelper.h */,
+				3298B2F31AAA27D6009A668A /* ABGameKitHelper.m */,
 				32CB73BF1AA4CB4B00790001 /* googleAnalytics */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 			);
@@ -568,6 +580,9 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3298B2FA1AAA287E009A668A /* Security.framework */,
+				3298B2F81AAA2872009A668A /* CFNetwork.framework */,
+				3298B2F61AAA2865009A668A /* GameKit.framework */,
 				32CB73C81AA4CE7B00790001 /* libGoogleAnalyticsServices.a */,
 				32CB73C61AA4CE6200790001 /* libsqlite3.dylib */,
 				32CB73C41AA4CE5200790001 /* libz.dylib */,
@@ -890,6 +905,7 @@
 				321BA25B1A8F5C1F00619B12 /* SceneManager.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				32F2FB8E1A97AC29009DE412 /* CreditScene.m in Sources */,
+				3298B2F41AAA27D6009A668A /* ABGameKitHelper.m in Sources */,
 				32B4DA551A9B1C7E0005DBAD /* MyAdMobController.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				32F9B5581A8B574900872317 /* GameScene.m in Sources */,

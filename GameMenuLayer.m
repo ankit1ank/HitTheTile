@@ -10,6 +10,7 @@
 #import "SceneManager.h"
 #import "GameMenuLayer.h"
 #import "GameScene.h"
+#import "ABGameKitHelper.h"
 
 @implementation GameMenuLayer {
     CCLabelTTF * _readyText;
@@ -49,13 +50,17 @@
     UIViewController *rootViewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
     
     [[MyAdMobController sharedController] showInterstitialOnViewController:rootViewController];
-    [_gameScene enableTouch];
+    
     CCAnimationManager* am = self.animationManager;
+    
     if ([am.runningSequenceName isEqualToString:@"resume game"] == NO) {
         [am runAnimationsForSequenceNamed:@"resume game"];
     }
+    // Remove this line after fixing
     _gameScene.userInteractionEnabled = YES;
 }
+
+
 
 -(void) resumeGameDidEnd {
     [_gameScene removePopover];
@@ -66,13 +71,22 @@
     [SceneManager presentGameScene];
 }
 
+-(void) showLeaderboard {
+    //Admob show
+    UIViewController *rootViewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    
+    [[MyAdMobController sharedController] showInterstitialOnViewController:rootViewController];
+    
+    [[ABGameKitHelper sharedHelper] showLeaderboard:@"in.ankitgoel.TapTheTile.HighScores"];
+}
+
 -(void) shouldExitGame {
     //Admob show
     UIViewController *rootViewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
     
     [[MyAdMobController sharedController] showInterstitialOnViewController:rootViewController];
     
-    [SceneManager presentMainMenu];
+     [SceneManager presentMainMenu];
 }
 
 @end

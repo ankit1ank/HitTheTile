@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 
+
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
@@ -37,6 +38,7 @@
     [CCBReader configureCCFileUtils];
     
     [[CCPackageManager sharedManager] loadPackages];
+    
 
     [director runWithScene:[CCBReader loadAsScene:@"MainScene"]];
 }

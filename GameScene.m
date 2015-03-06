@@ -10,6 +10,7 @@
 #import "GameMenuLayer.h"
 #include <stdlib.h>
 #import "MyAdMobController.h"
+#import "ABGameKitHelper.h"
 
 
 @implementation GameScene {
@@ -91,7 +92,7 @@
         _timeInterval = 0.8 + [self genInterval];
     } else if (score < 15) {
         _timeInterval = 0.7 + [self genInterval];
-    } else if (score < 30) {
+    } else if (score < 50) {
         _timeInterval = 0.5 + [self genInterval];
     }
 
@@ -143,6 +144,8 @@
             NSNumber * updateHighScore = [NSNumber numberWithInt:score];
             [defaults setObject:updateHighScore forKey:@"HighScore"];
             [defaults synchronize];
+            // Send highscore to leaderboard
+            [[ABGameKitHelper sharedHelper] reportScore:score forLeaderboard:@"in.ankitgoel.TapTheTile.HighScores"];
             _highScoreLabel.string = [NSString stringWithFormat:@"Best: %d",score];
         }
         // Load gameover popup later so animation can finish
@@ -228,6 +231,8 @@
                 NSNumber * updateHighScore = [NSNumber numberWithInt:score];
                 [defaults setObject:updateHighScore forKey:@"HighScore"];
                 [defaults synchronize];
+                // Send highscore to leaderboard
+                [[ABGameKitHelper sharedHelper] reportScore:score forLeaderboard:@"in.ankitgoel.TapTheTile.HighScores"];
                 _highScoreLabel.string = [NSString stringWithFormat:@"Best: %d",score];
             }
             [self performSelector:@selector(delayGameOverPopup) withObject:nil afterDelay:0.5 ];

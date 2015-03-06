@@ -3,8 +3,13 @@
 
 @import GoogleMobileAds;
 #import "MyAdMobController.h"
+#import "ABGameKitHelper.h"
 
 @implementation MainScene
+
+-(void) didLoadFromCCB {
+    [ABGameKitHelper sharedHelper];
+}
 
 -(void) playButtonPressed {
     [SceneManager presentGameScene];
