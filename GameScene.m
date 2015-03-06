@@ -126,6 +126,10 @@
         [self controlUpdate];
     } else {
         self.userInteractionEnabled = NO;
+        
+        //Play sound
+        [[OALSimpleAudio sharedInstance] playEffect:@"sound/wrong.wav"];
+        
         // Show the message too late
         _square.visible = NO;
         _triangle.visible = NO;

@@ -24,4 +24,10 @@
     NSNumber * highScore = [defaults objectForKey:@"HighScore"];
     NSLog(@"High Score: %@",highScore);
 }
+
+-(void) showLeaderboard {
+    
+    [[ABGameKitHelper sharedHelper] showLeaderboard:@"in.ankitgoel.TapTheTile.HighScores"];
+}
+
 @end
