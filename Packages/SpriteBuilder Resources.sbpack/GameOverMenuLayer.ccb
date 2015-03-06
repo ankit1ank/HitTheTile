@@ -185,7 +185,7 @@
 										<key>value</key>
 										<array>
 											<real>0.5</real>
-											<real>50</real>
+											<real>40</real>
 											<integer>1</integer>
 											<integer>2</integer>
 											<integer>0</integer>
@@ -241,7 +241,7 @@
 										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>40</real>
+											<real>50</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -766,7 +766,7 @@
 										<string>Size</string>
 										<key>value</key>
 										<array>
-											<real>80</real>
+											<real>100</real>
 											<real>40</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -800,7 +800,7 @@
 										<string>String</string>
 										<key>value</key>
 										<array>
-											<string>Leaderboard</string>
+											<string>Leaders</string>
 											<false/>
 										</array>
 									</dict>
@@ -1010,8 +1010,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -1094,7 +1092,7 @@
 										<string>Size</string>
 										<key>value</key>
 										<array>
-											<real>90</real>
+											<real>100</real>
 											<real>40</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1420,7 +1418,7 @@
 										<string>Size</string>
 										<key>value</key>
 										<array>
-											<real>90</real>
+											<real>100</real>
 											<real>40</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1757,6 +1755,8 @@
 								<real>1</real>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
