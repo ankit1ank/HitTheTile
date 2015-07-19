@@ -23,10 +23,8 @@
  * THE SOFTWARE.
  */
 
-@import GoogleMobileAds;
-#import "MyAdMobController.h"
+
 #import "cocos2d.h"
-#import "GAI.h"
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
 
@@ -57,32 +55,12 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
-    // Load admob interstitial
-    [[MyAdMobController sharedController] loadInterstitial];
-    
-    // Google Analytics
-    // Optional: automatically send uncaught exceptions to Google Analytics.
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
-    
-    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-    [GAI sharedInstance].dispatchInterval = 20;
-    
-    // Optional: set Logger to VERBOSE for debug information.
-    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-    
-    // Initialize tracker. Replace with your tracking ID.
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-60105587-3"];
-    
-    // Enable IDFA collection.
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    tracker.allowIDFACollection = YES;
-    
     return YES;
 }
 
 - (CCScene*) startScene
 {
-
+    // Load main scene as the start scene
     return [CCBReader loadAsScene:@"MainScene"];
 }
 

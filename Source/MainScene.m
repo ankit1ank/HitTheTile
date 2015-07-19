@@ -1,8 +1,7 @@
 #import "MainScene.h"
 #import "SceneManager.h"
 
-@import GoogleMobileAds;
-#import "MyAdMobController.h"
+
 #import "ABGameKitHelper.h"
 
 @implementation MainScene
@@ -19,15 +18,9 @@
     [SceneManager presentCredits];
 }
 
--(void) highScoreButtonPressed {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber * highScore = [defaults objectForKey:@"HighScore"];
-    NSLog(@"High Score: %@",highScore);
-}
-
 -(void) showLeaderboard {
-    
-    [[ABGameKitHelper sharedHelper] showLeaderboard:@"in.ankitgoel.TapTheTile.HighScores"];
+    // Uncomment the line below and set the leaderboard id to implement leaderboards in app
+    //[[ABGameKitHelper sharedHelper] showLeaderboard:@"com.whatever.your.leaderboard"];
 }
 
 @end

@@ -33,7 +33,7 @@
 /**
  * Set SECRET_KEY for proper encryption
  */
-#define SECRET_KEY @"lokarlohack"
+#define SECRET_KEY @"--PUT YOUR KEY TO TEST --"
 
 @interface ABGameKitHelper : NSObject
 
