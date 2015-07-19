@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>Resources/gamegraphics/circle.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{407, 203}, {200, 200}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {200, 200}}</string>
+			<key>sourceSize</key>
+			<string>{200, 200}</string>
+		</dict>
+		<key>Resources/gamegraphics/circle100px.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 205}, {202, 202}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {202, 202}}</string>
+			<key>sourceSize</key>
+			<string>{202, 202}</string>
+		</dict>
+		<key>Resources/gamegraphics/lives.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{609, 1}, {116, 116}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {116, 116}}</string>
+			<key>sourceSize</key>
+			<string>{116, 116}</string>
+		</dict>
+		<key>Resources/gamegraphics/miss.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 409}, {78, 78}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {78, 78}}</string>
+			<key>sourceSize</key>
+			<string>{78, 78}</string>
+		</dict>
+		<key>Resources/gamegraphics/square.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{407, 1}, {200, 200}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {200, 200}}</string>
+			<key>sourceSize</key>
+			<string>{200, 200}</string>
+		</dict>
+		<key>Resources/gamegraphics/square100px.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{205, 1}, {200, 200}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {200, 200}}</string>
+			<key>sourceSize</key>
+			<string>{200, 200}</string>
+		</dict>
+		<key>Resources/gamegraphics/triangle.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{205, 203}, {200, 200}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {200, 200}}</string>
+			<key>sourceSize</key>
+			<string>{200, 200}</string>
+		</dict>
+		<key>Resources/gamegraphics/triangle100px.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {202, 202}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {202, 202}}</string>
+			<key>sourceSize</key>
+			<string>{202, 202}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{1024, 512}</string>
+		<key>textureFileName</key>
+		<string>gamegraphics.png</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>Resources/menugraphics/button.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{118, 178}, {109, 40}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {109, 40}}</string>
+			<key>sourceSize</key>
+			<string>{109, 40}</string>
+		</dict>
+		<key>Resources/menugraphics/menubg.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {250, 175}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {250, 175}}</string>
+			<key>sourceSize</key>
+			<string>{250, 175}</string>
+		</dict>
+		<key>Resources/menugraphics/scorebg.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 178}, {115, 40}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {115, 40}}</string>
+			<key>sourceSize</key>
+			<string>{115, 40}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{256, 256}</string>
+		<key>textureFileName</key>
+		<string>menugraphics.png</string>
+	</dict>
+</dict>
+</plist>

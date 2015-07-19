@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>Resources/menugraphics/button.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{463, 703}, {436, 160}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {436, 160}}</string>
+			<key>sourceSize</key>
+			<string>{436, 160}</string>
+		</dict>
+		<key>Resources/menugraphics/menubg.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {1000, 700}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {1000, 700}}</string>
+			<key>sourceSize</key>
+			<string>{1000, 700}</string>
+		</dict>
+		<key>Resources/menugraphics/scorebg.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 703}, {460, 160}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {460, 160}}</string>
+			<key>sourceSize</key>
+			<string>{460, 160}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{1024, 1024}</string>
+		<key>textureFileName</key>
+		<string>menugraphics.png</string>
+	</dict>
+</dict>
+</plist>
